@@ -1,0 +1,13 @@
+export { default as authRoutes } from "./authRoutes";
+export { default as productRoutes } from "./productRoutes";
+export { default as orderRoutes } from "./orderRoutes";
+export { default as cartRoutes } from "./cartRoutes";
+export { default as reviewRoutes } from "./reviewRoutes";
+export { default as categoryRoutes } from "./categoryRoutes";
+export { default as notificationRoutes } from "./notificationRoutes";
+export { default as adminRoutes } from "./adminRoutes";
+export { default as ticketRoutes } from "./ticketRoutes";
+export { default as brandRoutes, adminBrandRoutes } from "./brandRoutes";
+export { default as blogRoutes, adminBlogRoutes } from "./blogRoutes";
+export { default as bannerRoutes, adminBannerRoutes } from "./bannerRoutes";
+export { default as uploadRoutes } from "./uploadRoutes";
