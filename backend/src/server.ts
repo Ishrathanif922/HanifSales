@@ -74,6 +74,10 @@ app.use("/api/banners", bannerRoutes);
 app.use("/api/admin/banners", adminBannerRoutes);
 app.use("/api/upload", uploadRoutes);
 
+app.get("/", (_, res) => {
+  res.json({ status: "success", message: "Hanif Sales API is running successfully!" });
+});
+
 app.get("/api/health", (_, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
