@@ -103,11 +103,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <img src="/logo.jpg" alt="Hanif Sales" className="h-9 w-9 rounded-xl object-cover" />
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-red-600 to-black bg-clip-text text-transparent">
+            <div>
+              <h1 className="text-sm sm:text-xl font-bold bg-gradient-to-r from-red-600 to-black bg-clip-text text-transparent">
                 Hanif Sales
               </h1>
-              <p className="text-[10px] text-gray-400 -mt-1">Everything You Need</p>
+              <p className="text-[10px] text-gray-400 -mt-1 hidden sm:block">Everything You Need</p>
             </div>
           </Link>
 
