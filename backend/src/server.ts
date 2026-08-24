@@ -8,6 +8,7 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import rateLimit from "express-rate-limit";
 import connectDB from "./config/database";
+import mongoose from "mongoose";
 import { configureCloudinary } from "./config/cloudinary";
 import { errorHandler } from "./middleware/errorHandler";
 import {
@@ -83,6 +84,18 @@ const limiter = rateLimit({
   message: "Too many requests, please try again later.",
 });
 app.use("/api/", limiter);
+
+app.use(async (req, res, next) => {
+  try {
+    if (mongoose.connection.readyState !== 1) {
+      await connectDB();
+    }
+    next();
+  } catch (err: any) {
+    console.error("Database connection middleware error:", err);
+    res.status(500).json({ status: "error", message: "Database connection failed: " + (err.message || "Unknown error") });
+  }
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
