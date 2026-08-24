@@ -301,8 +301,7 @@ export const forgotPassword = async (req: IAuthRequest, res: Response): Promise<
       resetPasswordExpire: resetTokenExpire,
     });
 
-    const clientUrl = req.headers.origin || process.env.CLIENT_URL || "https://hanif-sales.netlify.app";
-    const resetUrl = `${clientUrl}/auth/reset-password?token=${resetToken}`;
+    const resetUrl = `https://hanif-sales.netlify.app/auth/reset-password?token=${resetToken}`;
 
     let emailSent = false;
     try {
